@@ -3,6 +3,24 @@ import { ref } from 'vue';
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 const show = ref(false);
+const counter = ref(0);
+
+const increase = () => {
+  counter.value++;
+  // console.log('clicked');
+};
+
+const decrease = () => {
+  if(counter.value > 0){
+    counter.value--;
+    return;
+  }
+  window.alert("Counter reached 0, can't be made negative");
+}
+
+const reset = () => {
+counter.value = 0;
+}
 </script>
 
 <template>
@@ -11,10 +29,14 @@ const show = ref(false);
     <!-- <div class="wrapper"> -->
     <!-- </div> -->
   </header>
-  
+
+  <h1>{{ counter }}</h1>
+  <button @click="increase" class="btn btn-primary">Increase</button>
+    <button @click="decrease" class="btn">Decrease</button>
+    <button @click="reset">Reset</button>
   <main>
     <HelloWorld msg="Hi, this is Akshay ffb" />
-    <!-- <TheWelcome /> -->
+    <slot></slot>
   </main>
 </template>
 
@@ -22,6 +44,15 @@ const show = ref(false);
 header {
   line-height: 1.5;
 }
+
+.btn{
+  border: 1px solid #B9B9B9;
+  padding: 15px;
+  background-color:black;
+  color: white;
+  border-radius: 20px;
+}
+
 
 .logo {
   display: block;
