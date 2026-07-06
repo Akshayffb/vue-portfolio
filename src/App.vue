@@ -1,10 +1,7 @@
 <script setup>
-import WorkInProgress from './components/WorkInProgress.vue';
-
-const isLIve = false;
+import DefaultLayout from './components/layouts/DefaultLayout.vue';
 </script>
 
 <template>
-  <WorkInProgress v-if="!isLIve" />
-  <router-view v-else />
+  <DefaultLayout class="min-h-screen flex flex-col" />
 </template>
