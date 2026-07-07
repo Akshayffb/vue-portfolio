@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
-import { PROFILE } from "../../config/profile";
-import ThemeSwitcher from "./ThemeSwitcher.vue";
+import { PROFILE } from "../../../config/profile";
+import ThemeSwitcher from "../ThemeSwitcher.vue";
 
 const mobileOpen = ref(false);
 const scrolled = ref(false);
@@ -81,10 +81,10 @@ onUnmounted(() => {
 
                     <ThemeSwitcher />
 
-                    <router-link to="${PROFILE.resume}" target="_blank"
+                    <a :href="PROFILE.resume" target="_blank"
                         class="rounded-full border border-white/10 px-4 py-2 text-sm text-white transition hover:bg-white/10">
                         Resume
-                    </router-link>
+                    </a>
 
                     <button @click="scrollTo('contact')"
                         class="rounded-full bg-violet-600 px-5 py-2 text-sm font-medium text-white transition hover:bg-violet-500">
@@ -107,9 +107,9 @@ onUnmounted(() => {
                             {{ link.label }}
                         </button>
 
-                        <router-link to="{{ PROFILE.resume }}" target="_blank" class="text-white/80">
+                        <a :href="PROFILE.resume" target="_blank" class="text-white/80">
                             Resume
-                        </router-link>
+                        </a>
 
                         <button @click="scrollTo('contact')" class="rounded-lg bg-violet-600 py-3 text-white">
                             Let's Talk

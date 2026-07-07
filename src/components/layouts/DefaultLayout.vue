@@ -1,18 +1,20 @@
 <script setup>
-import Footer from '../Footer.vue';
-import Navbar from '../Navbar.vue';
+import Footer from './Footer.vue';
+import Navbar from './Navbar.vue';
 import AppBackground from './AppBackground.vue';
 
 </script>
 
 <template>
-    <AppBackground />
+    <div class="relative flex min-h-screen flex-col">
+        <AppBackground />
 
-    <Navbar />
+        <Navbar />
 
-    <main class="flex-1">
-        <RouterView />
-    </main>
+        <main class="flex-1 pt-24">
+            <RouterView />
+        </main>
 
-    <Footer />
+        <Footer />
+    </div>
 </template>

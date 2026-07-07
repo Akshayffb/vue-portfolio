@@ -1,5 +1,5 @@
 <script setup>
-import { PROFILE } from '../../config/profile';
+import { PROFILE } from '../../../config/profile';
 
 const year = new Date().getFullYear();
 
