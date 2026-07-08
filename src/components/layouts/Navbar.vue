@@ -8,7 +8,6 @@ const scrolled = ref(false);
 const activeSection = ref("home");
 
 const links = [
-    { id: "home", label: "Home" },
     { id: "projects", label: "Projects" },
     { id: "experience", label: "Experience" },
     { id: "about", label: "About" },
@@ -54,26 +53,31 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <header class="fixed inset-x-0 top-5 z-50 flex justify-center px-4">
-        <nav class="w-full max-w-7xl transition-all duration-300" :class="[
-            scrolled
-                ? 'bg-white/8 backdrop-blur-xl border border-white/10 shadow-2xl'
-                : 'bg-white/5 backdrop-blur-md border border-white/5',
-            'rounded-full'
-        ]">
+    <header class="fixed inset-x-0 top-5 z-50 flex justify-center px-5">
+        <nav class="w-full max-w-7xl backdrop-blur-xl transition-all duration-300
+         rounded-4xl md:rounded-full" :class="scrolled ? 'shadow-2xl' : ''" :style="{
+            background: scrolled ? 'var(--color-surface-hover)' : 'var(--color-surface)',
+            border: `1px solid ${scrolled ? 'var(--color-border-hover)' : 'var(--color-border)'}`
+        }">
             <div class="flex h-16 items-center justify-between px-6">
-
-                <router-link to="/" @click="scrollTo('home')" class="text-lg font-semibold tracking-tight text-white">
+                <router-link to="/" @click="scrollTo('home')" class="text-lg font-semibold tracking-tight"
+                    :style="{ color: 'var(--color-heading)' }">
                     &lt; {{ PROFILE.name }} /&gt;
                 </router-link>
 
                 <div class="hidden items-center gap-8 md:flex">
                     <button v-for="link in links" :key="link.id" @click="scrollTo(link.id)"
-                        class="relative text-sm text-white/70 transition hover:text-white">
+                        class="relative text-sm transition-colors duration-200" :style="{
+                            color: activeSection === link.id
+                                ? 'var(--color-heading)'
+                                : 'var(--color-muted)'
+                        }" @mouseenter="$event.target.style.color = 'var(--color-heading)'"
+                        @mouseleave="$event.target.style.color = activeSection === link.id ? 'var(--color-heading)' : 'var(--color-muted)'">
                         {{ link.label }}
 
                         <span v-if="activeSection === link.id"
-                            class="absolute -bottom-2 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-violet-400" />
+                            class="absolute -bottom-2 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full"
+                            :style="{ background: 'var(--color-primary)' }" />
                     </button>
                 </div>
 
@@ -81,18 +85,24 @@ onUnmounted(() => {
 
                     <ThemeSwitcher />
 
-                    <a :href="PROFILE.resume" target="_blank"
-                        class="rounded-full border border-white/10 px-4 py-2 text-sm text-white transition hover:bg-white/10">
+                    <a :href="PROFILE.resume" target="_blank" class="rounded-full px-4 py-2 text-sm transition" :style="{
+                        color: 'var(--color-heading)',
+                        border: '1px solid var(--color-border)'
+                    }" @mouseenter="$event.target.style.background = 'var(--color-surface-hover)'"
+                        @mouseleave="$event.target.style.background = 'transparent'">
                         Resume
                     </a>
 
                     <button @click="scrollTo('contact')"
-                        class="rounded-full bg-violet-600 px-5 py-2 text-sm font-medium text-white transition hover:bg-violet-500">
+                        class="rounded-full px-5 py-2 text-sm font-medium text-white transition"
+                        :style="{ background: 'var(--color-primary)' }">
                         Let's Talk
                     </button>
+
                 </div>
 
-                <button @click="mobileOpen = !mobileOpen" class="text-white md:hidden">
+                <button @click="mobileOpen = !mobileOpen" class="md:hidden text-2xl"
+                    :style="{ color: 'var(--color-heading)' }">
                     ☰
                 </button>
             </div>
@@ -100,20 +110,24 @@ onUnmounted(() => {
             <transition enter-active-class="transition duration-300" leave-active-class="transition duration-200"
                 enter-from-class="opacity-0 -translate-y-3" enter-to-class="opacity-100 translate-y-0"
                 leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 -translate-y-3">
-                <div v-if="mobileOpen" class="border-t border-white/10 px-6 py-5 md:hidden">
+                <div v-if="mobileOpen" class="px-6 py-5 md:hidden"
+                    :style="{ borderTop: '1px solid var(--color-border)' }">
                     <div class="flex flex-col gap-4">
+
                         <button v-for="link in links" :key="link.id" @click="scrollTo(link.id)"
-                            class="text-left text-white/80 transition hover:text-white">
+                            class="text-left transition" :style="{ color: 'var(--color-text)' }">
                             {{ link.label }}
                         </button>
 
-                        <a :href="PROFILE.resume" target="_blank" class="text-white/80">
+                        <a :href="PROFILE.resume" target="_blank" :style="{ color: 'var(--color-heading)' }">
                             Resume
                         </a>
 
-                        <button @click="scrollTo('contact')" class="rounded-lg bg-violet-600 py-3 text-white">
+                        <button @click="scrollTo('contact')" class="rounded-lg py-3 text-white"
+                            :style="{ background: 'var(--color-primary)' }">
                             Let's Talk
                         </button>
+
                     </div>
                 </div>
             </transition>

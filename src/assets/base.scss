@@ -55,9 +55,9 @@
 }
 
 body {
-  min-height: 100vh;
   background: var(--color-background);
   color: var(--color-text);
+  margin: 0;
 
   font-family:
     Inter,
@@ -75,6 +75,11 @@ body {
   transition:
     background 0.25s ease,
     color 0.25s ease;
+}
+
+html,body, #app{
+  width: 100%;
+  min-height: 100dvh;
 }
 
 

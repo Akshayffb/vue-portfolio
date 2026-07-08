@@ -57,36 +57,49 @@ const handleClickOutside = (event) => {
 
 <template>
     <div ref="dropdownRef" class="relative">
-        <button @click="open = !open" :aria-label="`Change theme (current: ${theme})`" :aria-expanded="open" aria-haspopup="menu"
-            class="cursor-pointer rounded-full border border-gray-200 bg-white/80 p-2 shadow-sm backdrop-blur-xl transition hover:bg-gray-100 dark:border-white/10 dark:bg-black/40 dark:hover:bg-white/10">
+        <button @click="open = !open" :aria-label="`Change theme (current: ${theme})`" :aria-expanded="open"
+            aria-haspopup="menu"
+            class="cursor-pointer rounded-full border p-2 shadow-sm backdrop-blur-xl transition-all duration-200"
+            :style="{
+                background: 'var(--color-surface)',
+                border: '1px solid var(--color-border)',
+                color: 'var(--color-heading)'
+            }" @mouseenter="$event.currentTarget.style.background = 'var(--color-surface-hover)'"
+            @mouseleave="$event.currentTarget.style.background = 'var(--color-surface)'">
+            <Sun v-if="theme === 'light'" class="h-4 w-4" />
 
-            <Sun v-if="theme === 'light'" class="h-4 w-4 text-black dark:text-white" />
+            <Moon v-else-if="theme === 'dark'" class="h-4 w-4" />
 
-            <Moon v-else-if="theme === 'dark'" class="h-4 w-4 text-black dark:text-white" />
-
-            <Monitor v-else class="h-4 w-4 text-black dark:text-white" />
+            <Monitor v-else class="h-4 w-4" />
         </button>
 
-        <div v-if="open"
-            class="absolute right-0 mt-2 w-40 rounded-2xl border border-gray-200 bg-white p-1 shadow-lg dark:border-white/10 dark:bg-zinc-900">
-
+        <div v-if="open" class="absolute right-0 mt-2 w-40 rounded-2xl border p-1 shadow-xl backdrop-blur-xl" :style="{
+            background: 'var(--color-surface-hover)',
+            border: '1px solid var(--color-border)'
+        }">
             <button @click="setTheme('light')" role="menuitem"
-                class="flex w-full cursor-pointer items-center gap-2 rounded-xl px-3 py-2 text-sm text-black transition hover:bg-gray-100 dark:text-white dark:hover:bg-white/10">
-
+                class="flex w-full cursor-pointer items-center gap-2 rounded-xl px-3 py-2 text-sm transition-colors duration-200"
+                :style="{ color: 'var(--color-text)' }"
+                @mouseenter="$event.currentTarget.style.background = 'var(--color-surface)'"
+                @mouseleave="$event.currentTarget.style.background = 'transparent'">
                 <Sun class="h-4 w-4" />
                 <span>Light</span>
             </button>
 
             <button @click="setTheme('dark')" role="menuitem"
-                class="flex w-full cursor-pointer items-center gap-2 rounded-xl px-3 py-2 text-sm text-black transition hover:bg-gray-100 dark:text-white dark:hover:bg-white/10">
-
+                class="flex w-full cursor-pointer items-center gap-2 rounded-xl px-3 py-2 text-sm transition-colors duration-200"
+                :style="{ color: 'var(--color-text)' }"
+                @mouseenter="$event.currentTarget.style.background = 'var(--color-surface)'"
+                @mouseleave="$event.currentTarget.style.background = 'transparent'">
                 <Moon class="h-4 w-4" />
                 <span>Dark</span>
             </button>
 
             <button @click="setTheme('system')" role="menuitem"
-                class="flex w-full cursor-pointer items-center gap-2 rounded-xl px-3 py-2 text-sm text-black transition hover:bg-gray-100 dark:text-white dark:hover:bg-white/10">
-
+                class="flex w-full cursor-pointer items-center gap-2 rounded-xl px-3 py-2 text-sm transition-colors duration-200"
+                :style="{ color: 'var(--color-text)' }"
+                @mouseenter="$event.currentTarget.style.background = 'var(--color-surface)'"
+                @mouseleave="$event.currentTarget.style.background = 'transparent'">
                 <Monitor class="h-4 w-4" />
                 <span>System</span>
             </button>

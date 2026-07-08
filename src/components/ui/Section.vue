@@ -22,7 +22,7 @@ const spacings = {
 </script>
 
 <template>
-    <section :id="props.id" :class="['relative', spacings[props.spacing] || spacings.normal]">
+    <section :id="props.id" :class="['relative px-5 lg:px-0 xl:px-0', spacings[props.spacing] || spacings.normal]">
         <Container :size="props.size">
             <slot />
         </Container>

@@ -17,7 +17,7 @@ const sizes = {
 
 <template>
     <div :class="[
-        'mx-auto w-full px-6 sm:px-8 lg:px-10',
+        'mx-auto w-full',
         sizes[props.size] || sizes.lg,
     ]">
         <slot />

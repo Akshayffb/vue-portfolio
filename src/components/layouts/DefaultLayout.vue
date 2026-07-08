@@ -6,7 +6,7 @@ import AppBackground from './AppBackground.vue';
 </script>
 
 <template>
-    <div class="relative flex min-h-screen flex-col">
+    <div class="relative flex min-h-dvh flex-col">
         <AppBackground />
 
         <Navbar />

@@ -4,71 +4,58 @@ import { PROFILE } from "../../config/profile.js";
 </script>
 
 <template>
-    <Section id="home" size="xl">
-        <div class="mx-auto flex max-w-7xl flex-col px-6">
+    <Section id="home" size="lg">
 
-            <!-- Availability -->
-            <div
-                class="mb-8 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-2 text-sm text-emerald-400">
-                <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-400"></span>
-                Available for opportunities
-            </div>
+        <div class="mb-8 inline-flex w-fit items-center gap-2 rounded-full px-4 py-2 text-sm" :style="{
+            background: 'color-mix(in srgb, var(--color-primary) 12%, transparent)',
+            border: '1px solid color-mix(in srgb, var(--color-primary) 20%, transparent)',
+            color: 'var(--color-primary)'
+        }">
+            <span class="h-2 w-2 animate-pulse rounded-full" :style="{ background: 'var(--color-primary)' }" />
+            Open to Full-Time Opportunities
+        </div>
 
-            <!-- Heading -->
-            <h1 class="max-w-5xl text-5xl font-black leading-tight tracking-tight md:text-7xl lg:text-8xl">
-                Hi, I'm
-                <span
-                    class="bg-gradient-to-r from-violet-500 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
-                    {{ PROFILE.name }}
-                </span>
+        <h1 class="max-w-6xl text-4xl font-black leading-[1.05] tracking-tight md:text-7xl lg:text-8xl"
+            :style="{ color: 'var(--color-heading)' }">
+            I'm
 
-                <br />
+            <span class="bg-gradient-to-r from-violet-500 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+                {{ PROFILE.name }}
+            </span>
 
-                I build modern
-                <br />
-                web experiences.
-            </h1>
+            <br />
 
-            <!-- Description -->
-            <p class="mt-8 max-w-2xl text-lg leading-8 opacity-70 md:text-xl">
-                Full Stack Developer focused on building scalable web applications,
-                beautiful user interfaces, and reliable backend systems using Vue,
-                Java, Spring Boot, and cloud technologies.
-            </p>
+            Full Stack Developer
 
-            <!-- Buttons -->
-            <div class="mt-12 flex flex-wrap gap-4">
+            <br />
 
-                <button @click="document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })"
-                    class="rounded-full bg-violet-600 px-7 py-4 font-medium text-white transition hover:-translate-y-1 hover:bg-violet-500">
-                    View Projects
-                </button>
+            building web aplications.
+        </h1>
 
-                <a :href="PROFILE.resume" target="_blank"
-                    class="rounded-full border border-white/10 px-7 py-4 font-medium transition hover:bg-white/5">
-                    Resume
-                </a>
+        <p class="mt-8 max-w-2xl text-lg leading-8 md:text-xl" :style="{ color: 'var(--color-text)' }">
+            Experience building production-ready
+            <strong :style="{ color: 'var(--color-heading)' }">
+                travel, e-commerce, Documents Management System and SaaS applications
+            </strong>
+            with modern backend technologies.
+        </p>
 
-            </div>
+        <div class="mt-12 flex flex-wrap gap-4">
 
-            <!-- Stats -->
-            <div class="mt-20 flex flex-wrap gap-10 text-sm">
-                <div>
-                    <h3 class="text-3xl font-bold">3+</h3>
-                    <p class="opacity-60">Years Experience</p>
-                </div>
+            <button @click="document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })"
+                class="rounded-full px-7 py-4 font-medium text-white transition duration-300 hover:-translate-y-1"
+                :style="{ background: 'var(--color-primary)' }">
+                View Projects
+            </button>
 
-                <div>
-                    <h3 class="text-3xl font-bold">20+</h3>
-                    <p class="opacity-60">Projects Built</p>
-                </div>
-
-                <div>
-                    <h3 class="text-3xl font-bold">∞</h3>
-                    <p class="opacity-60">Curiosity</p>
-                </div>
-            </div>
+            <a :href="PROFILE.resume" target="_blank" class="rounded-full px-7 py-4 font-medium transition" :style="{
+                color: 'var(--color-heading)',
+                border: '1px solid var(--color-border)'
+            }">
+                Download Resume
+            </a>
 
         </div>
+
     </Section>
 </template>
