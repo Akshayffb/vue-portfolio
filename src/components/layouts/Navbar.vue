@@ -2,10 +2,12 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import { PROFILE } from "../../../config/profile";
 import ThemeSwitcher from "../ThemeSwitcher.vue";
+import { Menu, X } from "lucide-vue-next";
 
 const mobileOpen = ref(false);
 const scrolled = ref(false);
 const activeSection = ref("home");
+const navRef = ref(null);
 
 const links = [
     { id: "projects", label: "Projects" },
@@ -45,16 +47,34 @@ const onScroll = () => {
 onMounted(() => {
     window.addEventListener("scroll", onScroll);
     onScroll();
+    window.addEventListener("pointerdown", handleClickOutside);
+    window.addEventListener("resize", handleResize);
 });
 
 onUnmounted(() => {
     window.removeEventListener("scroll", onScroll);
+    window.removeEventListener('pointerdown', handleClickOutside);
+    window.removeEventListener("resize", handleResize);
 });
+
+const handleClickOutside = (event) => {
+    if (!mobileOpen.value) return;
+
+    if (navRef.value && !navRef.value.contains(event.target)) {
+        mobileOpen.value = false;
+    }
+};
+
+const handleResize = () => {
+    if (window.innerWidth >= 768) {
+        mobileOpen.value = false;
+    }
+};
 </script>
 
 <template>
     <header class="fixed inset-x-0 top-5 z-50 flex justify-center px-5">
-        <nav class="w-full max-w-7xl backdrop-blur-xl transition-all duration-300
+        <nav ref="navRef" class="w-full max-w-7xl backdrop-blur-xl transition-all duration-300
          rounded-4xl md:rounded-full" :class="scrolled ? 'shadow-2xl' : ''" :style="{
             background: scrolled ? 'var(--color-surface-hover)' : 'var(--color-surface)',
             border: `1px solid ${scrolled ? 'var(--color-border-hover)' : 'var(--color-border)'}`
@@ -101,10 +121,15 @@ onUnmounted(() => {
 
                 </div>
 
-                <button @click="mobileOpen = !mobileOpen" class="md:hidden text-2xl"
-                    :style="{ color: 'var(--color-heading)' }">
-                    ☰
-                </button>
+                <div class="flex items-center justify-between gap-3 md:hidden">
+                    <ThemeSwitcher />
+                    <button @click="mobileOpen = !mobileOpen" class="text-3xl transition-transform duration-200"
+                        :style="{ color: 'var(--color-heading)' }" :aria-label="mobileOpen ? 'Close Menu' : 'Open Menu'"
+                        :aria-expanded="mobileOpen" aria-controls="mobile-menu" id="mobile-menu">
+                        <Menu v-if="!mobileOpen" size="28" />
+                        <X v-else size="28" />
+                    </button>
+                </div>
             </div>
 
             <transition enter-active-class="transition duration-300" leave-active-class="transition duration-200"
@@ -127,7 +152,6 @@ onUnmounted(() => {
                             :style="{ background: 'var(--color-primary)' }">
                             Let's Talk
                         </button>
-
                     </div>
                 </div>
             </transition>
