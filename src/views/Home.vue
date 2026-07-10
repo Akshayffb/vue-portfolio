@@ -1,5 +1,6 @@
 <script setup>
 import About from "@/components/About.vue";
+import Experience from "@/components/Experience.vue";
 import Expertise from "@/components/Expertise.vue";
 import Hero from "@/components/Hero.vue";
 </script>
@@ -8,4 +9,5 @@ import Hero from "@/components/Hero.vue";
     <Hero />
     <!-- <About /> -->
     <Expertise />
+    <Experience />
 </template>

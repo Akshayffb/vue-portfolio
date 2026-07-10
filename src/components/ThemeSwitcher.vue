@@ -5,6 +5,21 @@ import { onMounted, onUnmounted, ref } from 'vue';
 const theme = ref("system");
 const open = ref(false);
 const dropdownRef = ref(null);
+const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+onMounted(() => {
+    theme.value = localStorage.getItem('theme') || 'system';
+    document.addEventListener('click', handleClickOutside);
+    window.addEventListener('scroll', onScroll);
+    mediaQuery.addEventListener('change', handleThemeChange);
+    applyTheme();
+})
+
+onUnmounted(() => {
+    document.removeEventListener('click', handleClickOutside);
+    window.removeEventListener('scroll', onScroll);
+    mediaQuery.removeEventListener('change', handleThemeChange)
+})
 
 const setTheme = (mode) => {
     theme.value = mode;
@@ -12,23 +27,6 @@ const setTheme = (mode) => {
     applyTheme();
     open.value = false;
 }
-
-onMounted(() => {
-    theme.value = localStorage.getItem('theme') || 'system';
-    applyTheme();
-
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-        if (theme.value === 'system') {
-            applyTheme();
-        }
-    })
-
-    document.addEventListener('click', handleClickOutside);
-})
-
-onUnmounted(() => {
-    document.removeEventListener('click', handleClickOutside);
-})
 
 const applyTheme = () => {
     const html = document.documentElement;
@@ -43,13 +41,22 @@ const applyTheme = () => {
         return;
     }
 
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    html.classList.toggle('dark', mediaQuery.matches);
+}
 
-    html.classList.toggle('dark', prefersDark);
+const handleThemeChange = () => {
+    if (theme.value === 'system')
+        applyTheme();
 }
 
 const handleClickOutside = (event) => {
     if (dropdownRef.value && !dropdownRef.value.contains(event.target)) {
+        open.value = false;
+    }
+}
+
+const onScroll = () => {
+    if (open.value) {
         open.value = false;
     }
 }
@@ -73,7 +80,7 @@ const handleClickOutside = (event) => {
             <Monitor v-else class="h-4 w-4" />
         </button>
 
-        <div v-if="open" class="absolute right-0 mt-2 w-40 rounded-2xl border p-1 shadow-xl backdrop-blur-xl" :style="{
+        <div v-if="open" class="absolute right-0 mt-4 w-40 rounded-2xl border p-1 shadow-xl backdrop-blur-xl" :style="{
             background: 'var(--color-surface-hover)',
             border: '1px solid var(--color-border)'
         }">

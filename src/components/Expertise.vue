@@ -72,13 +72,13 @@ const expertise = [
 
         <div class="mt-20 grid gap-6 md:grid-cols-2">
             <article v-for="item in expertise" :key="item.title"
-                class="group rounded-3xl border p-8 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                class="group rounded-3xl border p-8 lg:p-9 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                 :style="{
                     background: 'var(--color-surface)',
                     borderColor: 'var(--color-border)',
                 }">
                 <!-- Icon -->
-                <div class="flex h-14 w-14 items-center justify-center rounded-2xl border shadow-inner transition-all duration-300 group-hover:-translate-y-0.5 group-hover:scale-105"
+                <div class="flex h-14 w-14 items-center justify-center rounded-2xl border shadow-inner transition-all duration-300 group-hover:-translate-y-0.5 group-hover:scale-105 group-hover:-rotate-3"
                     :style="{
                         background:
                             'color-mix(in srgb, var(--color-primary) 12%, transparent)',
@@ -90,25 +90,19 @@ const expertise = [
                 </div>
 
                 <!-- Title -->
-                <h3 class="mt-6 text-2xl font-semibold tracking-tight" :style="{ color: 'var(--color-heading)' }">
+                <h3 class="mt-7 text-2xl font-semibold tracking-tight" :style="{ color: 'var(--color-heading)' }">
                     {{ item.title }}
                 </h3>
 
                 <!-- Description -->
-                <p class="mt-4 leading-8" :style="{ color: 'var(--color-text)' }">
+                <p class="my-8 leading-8" :style="{ color: 'var(--color-text)' }">
                     {{ item.description }}
                 </p>
-
-                <!-- Divider -->
-                <div class="my-8 h-px" :style="{
-                    background:
-                        'linear-gradient(to right, var(--color-border), transparent)',
-                }" />
 
                 <!-- Technologies -->
                 <div class="flex flex-wrap gap-2">
                     <span v-for="tech in item.technologies" :key="tech"
-                        class="rounded-full border px-3 py-1.5 text-xs font-medium transition-all duration-300 group-hover:-translate-y-0.5"
+                        class="rounded-full border px-3 py-1.5 text-xs font-medium transition-all duration-300 group-hover:-translate-y-0.5 group-hover:border-violet-500/20"
                         :style="{
                             background: 'var(--color-surface)',
                             borderColor: 'var(--color-border)',
