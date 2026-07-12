@@ -10,8 +10,8 @@ const activeSection = ref("home");
 const navRef = ref(null);
 
 const links = [
-    { id: "projects", label: "Projects" },
     { id: "experience", label: "Experience" },
+    { id: "projects", label: "Projects" },
     { id: "about", label: "About" },
     { id: "contact", label: "Contact" },
 ];
