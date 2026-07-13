@@ -87,7 +87,7 @@ const handleResize = () => {
 
                 <div class="hidden items-center gap-8 md:flex">
                     <button v-for="link in links" :key="link.id" @click="scrollTo(link.id)"
-                        class="relative text-sm transition-colors duration-200" :style="{
+                        class="relative text-sm cursor-pointer transition-colors duration-200" :style="{
                             color: activeSection === link.id
                                 ? 'var(--color-heading)'
                                 : 'var(--color-muted)'
@@ -114,7 +114,7 @@ const handleResize = () => {
                     </a>
 
                     <button @click="scrollTo('contact')"
-                        class="rounded-full px-5 py-2 text-sm font-medium text-white transition"
+                        class="rounded-full px-5 py-2 text-sm font-medium cursor-pointer text-white transition"
                         :style="{ background: 'var(--color-primary)' }">
                         Let's Talk
                     </button>
@@ -148,7 +148,7 @@ const handleResize = () => {
                             Resume
                         </a>
 
-                        <button @click="scrollTo('contact')" class="rounded-lg py-3 text-white"
+                        <button @click="scrollTo('contact')" class="rounded-lg py-3 cursor-pointer text-white"
                             :style="{ background: 'var(--color-primary)' }">
                             Let's Talk
                         </button>

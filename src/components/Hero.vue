@@ -1,6 +1,10 @@
 <script setup>
 import Section from "@/components/ui/Section.vue";
 import { PROFILE } from "../../config/profile.js";
+
+const scrollToProject = () => {
+    window.document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+}
 </script>
 
 <template>
@@ -17,41 +21,35 @@ import { PROFILE } from "../../config/profile.js";
             Open to Full-Time Opportunities
         </div>
 
-        <h1 class="max-w-5xl text-4xl font-black tracking-tight leading-[1.15] md:text-6xl md:leading-tight lg:text-8xl"
+        <h1 class="max-w-6xl text-[2.2rem] font-black tracking-tight leading-[1.15] md:text-6xl md:leading-tight lg:text-[5.5rem]"
             :style="{ color: 'var(--color-heading)' }">
             I'm
 
-            <span class="bg-gradient-to-r from-violet-500 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+            <span>
                 {{ PROFILE.name }}
             </span>
 
             <br />
-
-            Full Stack Developer
-
+            <span class="bg-gradient-to-r from-violet-500 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+                Full Stack Software Engineer
+            </span>
             <br />
 
             <span>
-                building production software.
-            </span>
+                building scalable web applications. </span>
         </h1>
 
         <p class="mt-8 max-w-2xl text-lg leading-8 md:text-xl" :style="{ color: 'var(--color-text)' }">
-            Experience building production-ready
+            I build production-ready web applications using
             <strong :style="{ color: 'var(--color-heading)' }">
-                travel platforms, e-commerce solutions, document management systems
-                and SaaS applications
+                Laravel, Vue.js and modern web technologies
             </strong>
-            using modern backend technologies and scalable software architecture.
+            with a focus on scalable backend systems, clean architecture and long-term maintainability.
         </p>
 
         <div class="mt-8 flex flex-wrap gap-4 md:mt-12">
-            <button @click="
-                document
-                    .getElementById('projects')
-                    ?.scrollIntoView({ behavior: 'smooth' })
-                "
-                class="rounded-full px-6 py-3 font-medium text-white transition-all duration-300 hover:-translate-y-1 lg:px-7 lg:py-4"
+            <button @click="scrollToProject"
+                class="rounded-full px-6 py-3 font-medium text-white cursor-pointer transition-all duration-300 hover:-translate-y-1 lg:px-7 lg:py-4"
                 :style="{ background: 'var(--color-primary)' }">
                 View Projects
             </button>

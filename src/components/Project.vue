@@ -7,24 +7,23 @@ const projects = [
         type: "Professional",
         title: "Travel Booking Platform",
         description:
-            "Contributed to a production travel booking platform by developing booking workflows, role-based access control, reporting modules and production enhancements for day-to-day business operations.",
+            "Contributed to a production travel platform by developing booking workflows, backend features, role-based access, reporting modules and system improvements to support daily business operations.",
         technologies: [
             "Laravel",
             "Vue.js",
             "MySQL",
-            "REST APIs",
         ],
     },
     {
         type: "Professional",
         title: "SaaS Data Aggregation Platform",
         description:
-            "Built backend services that synchronize data from multiple client databases into a centralized platform. Implemented background jobs, API integrations, SFTP processing and DigitalOcean Spaces for secure file storage.",
+            "Developed backend services that collect and synchronize data from multiple client databases into a centralized platform, including automated processing, API integrations and cloud file storage workflows.",
         technologies: [
             "Laravel",
             "Redis",
             "MySQL",
-            "DigitalOcean",
+            "DigitalOcean Spaces",
             "REST APIs",
         ],
     },
@@ -32,31 +31,31 @@ const projects = [
         type: "Professional",
         title: "Document Management System",
         description:
-            "Developed backend modules for document handling, file uploads, business workflows and secure document management while improving overall system reliability and maintainability.",
+            "Developing document management features for handling file uploads, storage workflows, access control and business processes while improving system reliability and maintainability.",
         technologies: [
             "Laravel",
             "MySQL",
             "REST APIs",
-            "DigitalOcean",
+            "DigitalOcean Spaces",
         ],
     },
     {
         type: "Professional",
         title: "Appointment Booking Platform",
         description:
-            "Built integrations between a WordPress website and a custom appointment management system supporting multiple stores, doctors, services, booking workflows and automated notifications.",
+            "Developed an appointment management system integrated with a WordPress website, supporting multiple stores, services, doctors, bookings and automated notifications.",
         technologies: [
             "Laravel",
             "WordPress",
             "MySQL",
-            "REST APIs",
+            "Webhooks",
         ],
     },
     {
         type: "Professional",
         title: "E-Commerce Solutions",
         description:
-            "Customized Laravel, WooCommerce and Shopify applications by implementing payment gateways, shipping integrations and business-specific functionality for multiple client projects.",
+            "Developed and customized e-commerce solutions with payment integrations, shipping workflows and business-specific features across Laravel, WooCommerce and Shopify platforms.",
         technologies: [
             "Laravel",
             "Shopify",
@@ -68,9 +67,9 @@ const projects = [
         type: "Freelance & Personal",
         title: "School Management System",
         description:
-            "Designed and developed a complete school management system for a local educational institution, including deployment, hosting configuration and administrative workflows.",
+            "Designed and developed a school management system to handle administrative workflows, records and daily operations for an educational institution.",
         technologies: [
-            "Laravel",
+            "CodeIgniter",
             "MySQL",
             "Bootstrap",
             "Deployment",
@@ -80,7 +79,7 @@ const projects = [
         type: "Personal Project",
         title: "UPI Payment Reminder",
         description:
-            "Currently building an application that helps users track pending UPI payments, automate reminders and manage recurring payment follow-ups using scheduled background jobs.",
+            "Building a payment reminder application to help users track pending UPI payments, manage reminders and automate follow-ups using scheduled background processes.",
         technologies: [
             "Laravel",
             "MySQL",
@@ -100,18 +99,16 @@ const projects = [
 
             <h2 class="text-4xl font-semibold leading-tight md:text-5xl lg:text-6xl"
                 :style="{ color: 'var(--color-heading)' }">
-                Software built for
+                Software solutions built
 
                 <span
                     class="bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-400 bg-clip-text text-transparent">
-                    real businesses
-                </span>
+                    for real-world use </span>
             </h2>
 
             <p class="mt-8 max-w-3xl text-lg leading-8" :style="{ color: 'var(--color-text)' }">
-                A selection of production systems, client projects and personal
-                applications I've built or contributed to across travel,
-                business automation, SaaS, document management and e-commerce.
+                A collection of professional, freelance and personal projects showcasing business applications,
+                integrations and software systems developed for real-world workflows.
             </p>
         </div>
 

@@ -22,7 +22,6 @@ const focusAreas = [
     "REST APIs",
     "Backend Development",
     "System Design",
-    "Business Applications",
     "Cloud Deployment",
     "Performance Optimization",
 ];
@@ -46,25 +45,15 @@ const focusAreas = [
             </h2>
 
             <p class="mt-8 max-w-3xl text-lg leading-8" :style="{ color: 'var(--color-text)' }">
-                I'm a Full Stack Software Engineer who enjoys building reliable,
-                scalable and maintainable web applications that solve real
-                business problems. My work spans frontend development, backend
-                architecture, REST APIs, third-party integrations, deployment
-                and production support.
+                I'm a Full Stack Software Engineer focused on building reliable and maintainable web applications that
+                solve real business problems. I enjoy working across the complete software lifecycle, from designing
+                user experiences and backend systems to improving performance and deploying production applications.
             </p>
 
             <p class="mt-6 max-w-3xl text-lg leading-8" :style="{ color: 'var(--color-text)' }">
-                Over the past few years I've contributed to travel booking
-                platforms, SaaS products, document management systems,
-                appointment booking platforms and e-commerce solutions. I enjoy
-                turning complex business requirements into clean software that
-                teams and businesses can depend on.
-            </p>
-
-            <p class="mt-6 max-w-3xl text-lg leading-8" :style="{ color: 'var(--color-text)' }">
-                I'm continuously learning, improving my engineering skills and
-                exploring better ways to design software that is scalable,
-                maintainable and delivers long-term value.
+                I believe good software is built through clean architecture, thoughtful engineering decisions and
+                continuous improvement. I enjoy learning new technologies, understanding complex problems and creating
+                solutions that provide long-term value.
             </p>
         </div>
 
@@ -92,9 +81,8 @@ const focusAreas = [
             </h3>
 
             <p class="mt-4 max-w-2xl leading-8" :style="{ color: 'var(--color-text)' }">
-                I enjoy working across the full software development lifecycle,
-                from designing user experiences and backend systems to deploying
-                production applications and continuously improving them.
+                Currently focused on improving my software engineering skills, designing scalable systems and building
+                applications that are reliable, maintainable and easy to evolve.
             </p>
 
             <div class="mt-8 flex flex-wrap gap-3">

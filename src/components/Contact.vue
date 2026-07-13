@@ -61,10 +61,9 @@ const contactItems = [
                     </h2>
 
                     <p class="mt-8 max-w-2xl text-lg leading-8" :style="{ color: 'var(--color-text)' }">
-                        I'm currently open to full-time software engineering
-                        opportunities and freelance projects. Whether you're
-                        building a new product, improving an existing platform,
-                        or growing your engineering team, I'd love to connect.
+                        I'm open to full-time software engineering opportunities. If
+                        you're looking for someone to build, improve or maintain web applications, I'd be happy to
+                        connect.
                     </p>
 
                     <div class="mt-10 flex flex-col gap-4 sm:flex-row">

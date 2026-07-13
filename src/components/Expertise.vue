@@ -7,25 +7,26 @@ const expertise = [
         icon: Monitor,
         title: "Full-Stack Web Applications",
         description:
-            "Developing responsive web applications with clean architecture, intuitive user interfaces and a strong focus on performance and maintainability.",
-        technologies: ["Vue.js", "JavaScript", "Bootstrap", "Webpack"],
+            "Building responsive and maintainable web applications with intuitive user interfaces, reusable components and clean architecture.",
+        technologies: ["Vue.js", "JavaScript", "Bootstrap", "Vite", "Webpack"],
     },
     {
         icon: Server,
         title: "Scalable Backend Systems",
         description:
-            "Designing APIs, authentication, business workflows, background jobs and database structures for production systems.",
+            "Developing scalable backend systems, REST APIs, authentication, business workflows, background jobs and database architectures.",
         technologies: ["Laravel", "MySQL", "Redis", "Queues"],
     },
     {
         icon: Workflow,
         title: "Integrations & Automation",
         description:
-            "Integrating payment gateways, third-party services and automated workflows to streamline business operations and reduce manual effort.",
+            "Connecting third-party services, payment gateways, SFTP servers and automated workflows to improve business processes and reduce manual work.",
         technologies: [
             "REST APIs",
             "Payment Gateways",
             "SFTP",
+            "Webhooks",
             "Automation",
         ],
     },
@@ -33,12 +34,13 @@ const expertise = [
         icon: Cloud,
         title: "Deployment & Infrastructure",
         description:
-            "Deploying and maintaining production applications while managing servers, cloud infrastructure, domains, SSL and application monitoring.",
+            "Deploying, monitoring and maintaining production applications while managing cloud infrastructure, domains, SSL, storage and server environments.",
         technologies: [
             "DigitalOcean",
             "Cloudflare",
             "Ubuntu",
-            "Git",
+            "Apache",
+            "Git"
         ],
     },
 ];
@@ -62,11 +64,9 @@ const expertise = [
             </h2>
 
             <p class="mt-8 max-w-3xl text-lg leading-8" :style="{ color: 'var(--color-text)' }">
-                I build software with a focus on clean architecture,
-                maintainability and long-term scalability. From intuitive user
-                interfaces to backend systems, APIs and production deployments,
-                I enjoy turning complex business requirements into practical
-                solutions.
+                I design and build maintainable software across the entire development lifecycle, from user interfaces
+                and backend systems to APIs, integrations and production deployments, with a strong focus on
+                performance, scalability and clean architecture.
             </p>
         </div>
 
