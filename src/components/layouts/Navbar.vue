@@ -9,6 +9,11 @@ const scrolled = ref(false);
 const activeSection = ref("home");
 const navRef = ref(null);
 
+const showNavbar = ref(true);
+let lastScrollY = 0;
+const SCROLL_DELTA = 10;
+const SHOW_OFFSET = 100;
+
 const links = [
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
@@ -23,25 +28,6 @@ const scrollTo = (id) => {
         behavior: "smooth",
         block: "start",
     });
-};
-
-const onScroll = () => {
-    scrolled.value = window.scrollY > 20;
-
-    const sections = links
-        .map((l) => document.getElementById(l.id))
-        .filter(Boolean);
-
-    const offset = 120;
-
-    for (const section of sections) {
-        const top = section.offsetTop;
-        const bottom = top + section.offsetHeight;
-
-        if (window.scrollY + offset >= top && window.scrollY + offset < bottom) {
-            activeSection.value = section.id;
-        }
-    }
 };
 
 onMounted(() => {
@@ -70,14 +56,57 @@ const handleResize = () => {
         mobileOpen.value = false;
     }
 };
+
+const onScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    scrolled.value = currentScrollY > 20;
+
+    if (mobileOpen.value) {
+        showNavbar.value = true;
+    } else if (currentScrollY <= SHOW_OFFSET) {
+        showNavbar.value = true;
+    } else if (currentScrollY > lastScrollY + SCROLL_DELTA) {
+        showNavbar.value = false;
+    } else if (currentScrollY < lastScrollY - SCROLL_DELTA) {
+        showNavbar.value = true;
+    }
+
+    lastScrollY = currentScrollY;
+
+    const sections = links
+        .map((l) => document.getElementById(l.id))
+        .filter(Boolean);
+
+    const offset = 120;
+
+    for (const section of sections) {
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
+
+        if (
+            currentScrollY + offset >= top &&
+            currentScrollY + offset < bottom
+        ) {
+            activeSection.value = section.id;
+        }
+    }
+};
 </script>
 
 <template>
-    <header class="fixed inset-x-0 top-5 z-50 flex justify-center px-5">
+    <header class="fixed inset-x-0 top-5 z-50 flex justify-center px-5 transition-all duration-300" :class="showNavbar
+        ? 'translate-y-0 opacity-100'
+        : '-translate-y-24 opacity-0 pointer-events-none'">
         <nav ref="navRef" class="w-full max-w-7xl backdrop-blur-xl transition-all duration-300
          rounded-4xl md:rounded-full" :class="scrolled ? 'shadow-2xl' : ''" :style="{
-            background: scrolled ? 'var(--color-surface-hover)' : 'var(--color-surface)',
-            border: `1px solid ${scrolled ? 'var(--color-border-hover)' : 'var(--color-border)'}`
+            background: scrolled
+                ? 'var(--color-nav-bg-hover)'
+                : 'var(--color-nav-bg)',
+            border: `1px solid ${scrolled
+                ? 'var(--color-border-hover)'
+                : 'var(--color-border)'
+                }`
         }">
             <div class="flex h-16 items-center justify-between px-6">
                 <router-link to="/" @click="scrollTo('home')" class="text-lg font-semibold tracking-tight"

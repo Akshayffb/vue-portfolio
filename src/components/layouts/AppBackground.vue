@@ -1,3 +1,7 @@
+<script setup>
+const isMobile = window.innerWidth < 768;
+</script>
+
 <template>
   <div class="fixed -z-10 overflow-hidden pointer-events-none" style="
     top: calc(-1 * env(safe-area-inset-top));
@@ -23,7 +27,8 @@
       backgroundImage: `
           linear-gradient(to right,var(--grid-color) 1px,transparent 1px),
           linear-gradient(to bottom,var(--grid-color) 1px,transparent 1px)
-        `
+        `,
+      backgroundPosition: isMobile ? '2px 0' : '-8px 0'
     }" />
 
   </div>

@@ -27,6 +27,9 @@
   --color-secondary: #06b6d4;
 
   --section-gap: 8rem;
+
+  --color-nav-bg: rgba(255, 255, 255, 0.75);
+  --color-nav-bg-hover: rgba(255, 255, 255, 0.9);
 }
 
 /* ===========================
@@ -52,6 +55,9 @@
 
   --color-primary: #8b5cf6;
   --color-secondary: #22d3ee;
+
+  --color-nav-bg: rgba(20, 20, 20, 0.6);
+  --color-nav-bg-hover: rgba(20, 20, 20, 0.75);
 }
 
 body {
@@ -77,30 +83,36 @@ body {
     color 0.25s ease;
 }
 
-html,body, #app{
+html,
+body,
+#app {
   width: 100%;
   min-height: 100dvh;
 }
 
-
 @keyframes drift {
-    0% {
-        transform: translate(-50%, 0);
-    }
+  0% {
+    transform: translate(-50%, 0);
+  }
 
-    50% {
-        transform: translate(-48%, 30px);
-    }
+  50% {
+    transform: translate(-48%, 30px);
+  }
 
-    100% {
-        transform: translate(-50%, 0);
-    }
+  100% {
+    transform: translate(-50%, 0);
+  }
 }
 
 .background-glow {
-    animation: drift 14s ease-in-out infinite;
+  animation: drift 14s ease-in-out infinite;
 }
 
 .background-glow-delay {
   animation: float 16s ease-in-out infinite reverse;
+}
+
+.glass {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
 }

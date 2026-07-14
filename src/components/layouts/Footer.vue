@@ -55,7 +55,7 @@ onUnmounted(() => {
             </div>
 
             <!-- Bottom -->
-            <div class="mt-20 flex flex-col items-center justify-between gap-5 border-t pt-8 text-sm md:flex-row"
+            <div class="mt-20 flex flex-col items-center justify-center gap-5 border-t pt-8 text-sm md:flex-row"
                 :style="{
                     borderColor: 'var(--color-border)',
                     color: 'var(--color-text)',
