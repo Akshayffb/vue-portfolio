@@ -1,17 +1,17 @@
 <script setup>
-import About from "@/components/About.vue";
-import Experience from "@/components/Experience.vue";
-import Expertise from "@/components/Expertise.vue";
-import Hero from "@/components/Hero.vue";
-import Project from "@/components/Project.vue";
-import Contact from "@/components/Contact.vue";
+import HeroSection from "@/sections/HeroSection.vue";
+import ExpertiseSection from "@/sections/ExpertiseSection.vue";
+import ExperienceSection from "@/sections/ExperienceSection.vue";
+import ProjectsSection from "@/sections/ProjectsSection.vue";
+import AboutSection from "@/sections/AboutSection.vue";
+import ContactSection from "@/sections/ContactSection.vue";
 </script>
 
 <template>
-    <Hero />
-    <Expertise />
-    <Experience />
-    <Project />
-    <About />
-    <Contact />
+    <HeroSection />
+    <ExpertiseSection />
+    <ExperienceSection />
+    <ProjectsSection />
+    <AboutSection />
+    <ContactSection />
 </template>

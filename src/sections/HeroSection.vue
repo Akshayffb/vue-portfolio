@@ -33,7 +33,6 @@ const scrollToProject = () => {
             <span class="bg-gradient-to-r from-violet-500 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
                 Full Stack Software Engineer
             </span>
-            <br />
 
             <span>
                 building scalable web applications. </span>

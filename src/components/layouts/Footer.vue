@@ -55,14 +55,14 @@ onUnmounted(() => {
             </div>
 
             <!-- Bottom -->
-            <div class="mt-20 flex flex-col items-center justify-center gap-5 border-t pt-8 text-sm md:flex-row"
-                :style="{
-                    borderColor: 'var(--color-border)',
-                    color: 'var(--color-text)',
-                }">
+            <div class="mt-20 flex flex-col items-center justify-center gap-5 border-t pt-8 text-sm md:flex-row" :style="{
+                borderColor: 'var(--color-border)',
+                color: 'var(--color-text)',
+            }">
 
                 <p>
                     © {{ year }} {{ PROFILE.name }}. All rights reserved.
+                    <router-link to="/notes">Notes</router-link>
                 </p>
 
                 <Transition name="fade">
@@ -74,7 +74,7 @@ onUnmounted(() => {
                             color: 'var(--color-heading)',
                         }">
 
-                        <span class="flex h-8 w-8 items-center justify-center rounded-full" :style="{
+                        <span class="flex h-8 w-7 items-center justify-center rounded-full" :style="{
                             background:
                                 'color-mix(in srgb, var(--color-primary) 12%, transparent)',
                             color: 'var(--color-primary)',

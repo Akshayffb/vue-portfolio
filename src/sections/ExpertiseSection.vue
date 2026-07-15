@@ -1,49 +1,7 @@
 <script setup>
 import Section from "@/components/ui/Section.vue";
-import { Monitor, Server, Workflow, Cloud } from "lucide-vue-next";
+import { EXPERTISES } from "../../config/expertises.js";
 
-const expertise = [
-    {
-        icon: Monitor,
-        title: "Full-Stack Web Applications",
-        description:
-            "Building responsive and maintainable web applications with intuitive user interfaces, reusable components and clean architecture.",
-        technologies: ["Vue.js", "JavaScript", "Bootstrap", "Vite", "Webpack"],
-    },
-    {
-        icon: Server,
-        title: "Scalable Backend Systems",
-        description:
-            "Developing scalable backend systems, REST APIs, authentication, business workflows, background jobs and database architectures.",
-        technologies: ["Laravel", "MySQL", "Redis", "Queues"],
-    },
-    {
-        icon: Workflow,
-        title: "Integrations & Automation",
-        description:
-            "Connecting third-party services, payment gateways, SFTP servers and automated workflows to improve business processes and reduce manual work.",
-        technologies: [
-            "REST APIs",
-            "Payment Gateways",
-            "SFTP",
-            "Webhooks",
-            "Automation",
-        ],
-    },
-    {
-        icon: Cloud,
-        title: "Deployment & Infrastructure",
-        description:
-            "Deploying, monitoring and maintaining production applications while managing cloud infrastructure, domains, SSL, storage and server environments.",
-        technologies: [
-            "DigitalOcean",
-            "Cloudflare",
-            "Ubuntu",
-            "Apache",
-            "Git"
-        ],
-    },
-];
 </script>
 
 <template>
@@ -71,7 +29,7 @@ const expertise = [
         </div>
 
         <div class="mt-20 grid gap-6 md:grid-cols-2">
-            <article v-for="item in expertise" :key="item.title"
+            <article v-for="item in EXPERTISES" :key="item.title"
                 class="group rounded-3xl border p-8 lg:p-9 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                 :style="{
                     background: 'var(--color-surface)',
