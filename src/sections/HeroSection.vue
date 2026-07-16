@@ -35,7 +35,7 @@ const scrollToProject = () => {
             </span>
 
             <span>
-                building scalable web applications. </span>
+                building scalable web applications</span>
         </h1>
 
         <p class="mt-8 max-w-2xl text-lg leading-8 md:text-xl" :style="{ color: 'var(--color-text)' }">

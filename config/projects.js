@@ -48,7 +48,7 @@ export const PROJECTS = [
     technologies: ["CodeIgniter", "MySQL", "Bootstrap", "Deployment"],
   },
   {
-    type: "Personal Project",
+    type: "Personal",
     title: "UPI Payment Reminder",
     description:
       "Building a payment reminder application to help users track pending UPI payments, manage reminders and automate follow-ups using scheduled background processes.",

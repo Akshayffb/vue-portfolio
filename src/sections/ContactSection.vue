@@ -29,7 +29,7 @@ const contactItems = [
     },
     {
         title: "LinkedIn",
-        value: "Akshay Kumar",
+        value: "akshayffb",
         href: PROFILE.linkedIn,
         icon: Linkedin,
     },
@@ -50,14 +50,9 @@ const contactItems = [
                         Contact
                     </p>
 
-                    <h2 class="text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl lg:text-6xl"
-                        :style="{ color: 'var(--color-heading)' }">
-                        Let's build something
-
-                        <span
-                            class="bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-400 bg-clip-text text-transparent">
-                            great together
-                        </span>
+                    <h2
+                        class="text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-400 bg-clip-text text-transparent">
+                        Let's Connect
                     </h2>
 
                     <p class="mt-8 max-w-2xl text-lg leading-8" :style="{ color: 'var(--color-text)' }">
@@ -72,7 +67,7 @@ const contactItems = [
                             :style="{
                                 background: 'var(--color-primary)',
                             }">
-                            Let's Talk
+                            Email Me
                         </a>
 
                         <a :href="PROFILE.resume" target="_blank"
@@ -80,7 +75,7 @@ const contactItems = [
                             :style="{
                                 borderColor: 'var(--color-border)',
                                 color: 'var(--color-heading)',
-                            }">
+                            }" download>
                             Download Resume
                         </a>
                     </div>

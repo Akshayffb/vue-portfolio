@@ -62,7 +62,6 @@ onUnmounted(() => {
 
                 <p>
                     © {{ year }} {{ PROFILE.name }}. All rights reserved.
-                    <router-link to="/notes">Notes</router-link>
                 </p>
 
                 <Transition name="fade">

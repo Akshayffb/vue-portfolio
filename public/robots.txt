@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://akshay-ffb.vercel.app/sitemap.xml
+Sitemap: https://akshayffb.is-a.dev/sitemap.xml

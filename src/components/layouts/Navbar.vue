@@ -134,10 +134,11 @@ const onScroll = () => {
 
                     <ThemeSwitcher />
 
-                    <a :href="PROFILE.resume" target="_blank" class="rounded-full px-4 py-2 text-sm transition" :style="{
-                        color: 'var(--color-heading)',
-                        border: '1px solid var(--color-border)'
-                    }" @mouseenter="$event.target.style.background = 'var(--color-surface-hover)'"
+                    <a :href="PROFILE.resume" target="_blank" rel="noopener noreferrer"
+                        class="rounded-full px-4 py-2 text-sm transition" :style="{
+                            color: 'var(--color-heading)',
+                            border: '1px solid var(--color-border)'
+                        }" @mouseenter="$event.target.style.background = 'var(--color-surface-hover)'"
                         @mouseleave="$event.target.style.background = 'transparent'">
                         Resume
                     </a>
@@ -145,7 +146,7 @@ const onScroll = () => {
                     <button @click="scrollTo('contact')"
                         class="rounded-full px-5 py-2 text-sm font-medium cursor-pointer text-white transition"
                         :style="{ background: 'var(--color-primary)' }">
-                        Let's Talk
+                        Contact
                     </button>
 
                 </div>
@@ -179,7 +180,7 @@ const onScroll = () => {
 
                         <button @click="scrollTo('contact')" class="rounded-lg py-3 cursor-pointer text-white"
                             :style="{ background: 'var(--color-primary)' }">
-                            Let's Talk
+                            Contact
                         </button>
                     </div>
                 </div>
