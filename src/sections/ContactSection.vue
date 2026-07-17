@@ -70,12 +70,12 @@ const contactItems = [
                             Email Me
                         </a>
 
-                        <a :href="PROFILE.resume" target="_blank"
+                        <a :href="PROFILE.resume"
                             class="w-full rounded-full border px-7 py-4 text-center font-medium transition-all duration-300 hover:-translate-y-1 sm:w-auto"
                             :style="{
                                 borderColor: 'var(--color-border)',
                                 color: 'var(--color-heading)',
-                            }" download>
+                            }" download="Akshay_Kumar_Resume.pdf">
                             Download Resume
                         </a>
                     </div>

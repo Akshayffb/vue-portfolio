@@ -1,4 +1,5 @@
 import Home from "@/views/Home.vue";
+import PageNotFound from "@/views/PageNotFound.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
@@ -8,6 +9,15 @@ const router = createRouter({
       path: "/",
       name: "Home",
       component: Home,
+    },
+    {
+      path: "/:pathMatch(.*)",
+      name: "NotFound",
+      component: PageNotFound,
+      meta: {
+        hideFooter: true,
+        hideNavbar: false,
+      },
     },
   ],
 });

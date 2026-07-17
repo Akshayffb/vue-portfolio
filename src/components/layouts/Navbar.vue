@@ -174,7 +174,7 @@ const onScroll = () => {
                             {{ link.label }}
                         </button>
 
-                        <a :href="PROFILE.resume" target="_blank" :style="{ color: 'var(--color-heading)' }">
+                        <a :href="PROFILE.resume" :style="{ color: 'var(--color-heading)' }" download="Akshay_Kumar_Resume.pdf">
                             Resume
                         </a>
 

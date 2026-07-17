@@ -53,12 +53,12 @@ const scrollToProject = () => {
                 View Projects
             </button>
 
-            <a :href="PROFILE.resume" target="_blank"
+            <a :href="PROFILE.resume"
                 class="rounded-full px-6 py-3 font-medium transition-all duration-300 hover:-translate-y-1 lg:px-7 lg:py-4"
                 :style="{
                     color: 'var(--color-heading)',
                     border: '1px solid var(--color-border)',
-                }">
+                }" download="Akshay_Kumar_Resume.pdf">
                 Download Resume
             </a>
         </div>
