@@ -40,7 +40,7 @@
 
       <div class="flex flex-wrap py-5 gap-4">
         <a
-          href="mailto:akshayffb@gmail.com"
+          href="mailto:akshayffb.dev@gmail.com"
           class="rounded-xl bg-white px-6 py-3 font-medium text-black transition hover:scale-[1.02]"
         >
           Get In Touch
