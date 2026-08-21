@@ -1,28 +1,64 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from "vitepress";
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: "/docs/",
+  outDir: "../dist/docs",
+  head: [["meta", { name: "robots", content: "noindex, nofollow" }]],
+
   title: "Akshay ffb Notes",
   description: "A personal space for documenting what I learn, understand, and build.",
+
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Notes', link: '/markdown-examples' }
+      { text: "Home", link: "/" },
+      { text: "My Reference", link: "/my-reference/" },
+      { text: "Learning", link: "/notes/" },
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: "My Reference",
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],
+          { text: "About Me", link: "/my-reference/about-me" },
+          {
+            text: "Tell Me About Yourself",
+            link: "/my-reference/tell-me-about-yourself",
+          },
+          {
+            text: "Interview Last-Minute Review",
+            link: "/my-reference/interview-review",
+          },
+          { text: "Projects", link: "/my-reference/projects" },
+          {
+            text: "Experience & Responsibilities",
+            link: "/my-reference/experience",
+          },
+        ],
+      },
 
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
-  }
-})
+      {
+        text: "PHP",
+        items: [
+          { text: "Fundamentals", link: "/notes/php/fundamentals" },
+          { text: "OOP", link: "/notes/php/oops" },
+        ],
+      },
+
+      {
+        text: "Laravel",
+        items: [
+          { text: "Fundamentals", link: "/notes/laravel/fundamentals" },
+          { text: "Authentication", link: "/notes/laravel/authentication" },
+        ],
+      },
+
+      {
+        text: "Database",
+        items: [
+          { text: "SQL", link: "/notes/database/sql" },
+          { text: "Database Design", link: "/notes/database/database-design" },
+        ],
+      },
+    ],
+  },
+});
