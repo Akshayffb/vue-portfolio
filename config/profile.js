@@ -3,5 +3,5 @@ export const PROFILE = {
   email: "akshayffb.dev@gmail.com",
   github: "https://github.com/Akshayffb/",
   linkedIn: "https://linkedin.com/in/akshayffb/",
-  resume: "/Akshay_master_public_resume.pdf",
+  resume: "/Akshay_public_resume_v1.pdf",
 };
